@@ -33,12 +33,24 @@ sizePrice + (2 * (pizza.toppings.length))
 
 -------------------------
 
-Describe: PizzaDatabase(pizza)
+Describe: PizzaDatabase()
 
-Test: "It should return a PizzaDatabase object with a pizzas property with the value of pizza"
+Test: "It should return a PizzaDatabase object with a pizzas property with the value of an empty object"
 
-Code: let pizzaDatabase = new PizzaDatabase(pizza)
+Code: const pizzaDatabase = new PizzaDatabase()
 
-Expected Output: PizzaDatabase { pizzas: pizza}
+Expected Output: PizzaDatabase { pizzas: {}}
+
+-------------------------
+
+Describe: PizzaDatabase.prototype.addPizza(pizza)
+
+Test: "It should add Pizza object to the pizzas property of the pizzaDatabase object"
+
+Code: 
+pizzaDatabase.addPizza(pizza)
+pizzaDatase;
+
+Expected Output: PizzaDatabase { pizzas: pizza }
 
 

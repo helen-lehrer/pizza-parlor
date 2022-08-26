@@ -27,8 +27,8 @@ Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
   return price;
 };
 
-function PizzaDatabase (pizza) {
-  this.pizzas = pizza;
+function PizzaDatabase () {
+  this.pizzas = {};
 }
 
 //UI Logic
