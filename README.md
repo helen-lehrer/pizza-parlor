@@ -67,14 +67,14 @@ if pizza.size = medium, then expected output = 16
 
 -------------------------
 
-Describe: Pizza.prototype.calculateFinalPrice(sizePrice)
+Describe: Pizza.prototype.calculateFinalPrice(basePrice)
 
-Test: "It should add onto the returned value of Pizza.prototype.calculateSizePrice() based on the amount of toppings selected and return a final price"
+Test: "It should add onto the returned value of Pizza.prototype.calculateBasePrice() based on the amount of toppings selected and return a final price"
 
-Code: pizza.calculateFinalPrice(sizePrice);
+Code: pizza.calculateFinalPrice(basePrice);
 
 Expected Output:
-sizePrice + (2 * (pizza.toppings.length))
+basePrice + (2 * (pizza.toppings.length))
 
 -------------------------
 
@@ -90,7 +90,7 @@ Expected Output: PizzaDatabase { pizzas: {}}
 
 Describe: PizzaDatabase.prototype.addPizza(pizza)
 
-Test: "It should add Pizza object to the pizzas property of the pizzaDatabase object"
+Test: "It should add a Pizza object to the pizzas property of the pizzaDatabase object"
 
 Code: 
 pizzaDatabase.addPizza(pizza);
@@ -118,7 +118,7 @@ Describe: PizzaDatabase.prototype.findPizza(id)
 
 Test: "It should return the pizza object with the matching id property"
 
-Code: pizzaDatabase.findPizza(id)
+Code: pizzaDatabase.findPizza(1)
 
 Expected Output:
 Pizza {toppings: Array(2), size: "medium"}

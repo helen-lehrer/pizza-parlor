@@ -19,12 +19,12 @@ Pizza.prototype.calculateBasePrice = function () {
   return price;
 };
 
-Pizza.prototype.calculateFinalPrice = function (sizePrice) {
+Pizza.prototype.calculateFinalPrice = function (basePrice) {
   let price;
   if (this.toppings.length === 0) {
-    price = sizePrice;
+    price = basePrice;
   }
-  price = sizePrice + (2 * this.toppings.length);
+  price = basePrice + (2 * this.toppings.length);
   return price;
 };
 
