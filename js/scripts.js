@@ -46,12 +46,14 @@ PizzaDatabase.prototype.addPizza = function (pizza) {
   this.pizzas[pizza.id] = pizza;
 }
 
+/*
 PizzaDatabase.prototype.findPizza = function (id) {
   if (this.pizzas[pizza.id] !== undefined) {
     return this.pizzas[pizza.id];
   }
   return false;
 };
+*/
 
 //UI Logic
 let pizzaDatabase = new PizzaDatabase();
@@ -61,12 +63,27 @@ function handleFormSubmission (event) {
   let size = document.getElementById("size-select").value;
   let toppingsSelections = document.querySelectorAll("input[name=toppings-checkbox]:checked");
   let toppingsSelectionsArray = Array.from(toppingsSelections);
+  console.log("toppingsSelectionsArray");
 
   let pizza = new Pizza (toppingsSelectionsArray, size);
   pizzaDatabase.addPizza(pizza);
   let price = pizza.calculateFinalPrice(pizza.calculateBasePrice());
   const priceDisplay = document.getElementById("price-display");
   priceDisplay.innerText = price;
+
+  const orderedPizzaDisplay = document.getElementById("ordered-pizza-display");
+  orderedPizzaDisplay.removeAttribute("class", "hidden");
+  const ul = document.createElement("ul");
+  const li = document.createElement("li");
+  ul.append(li);
+  li.innerText = pizzaDatabase.pizzas[pizza.id].id + ": size: " + size + ", toppings: " + toppingsSelectionsArray.join(" ");
+  const orderedPizzaList = document.getElementById("ordered-pizza-list");
+  orderedPizzaList.append(ul);
+
+  /*
+  const orderedPizzaList = document.getElementById("ordered-pizza-list");
+  orderedPizzaList.append(ul);
+  */
 }
 
 window.addEventListener("load", function () {
