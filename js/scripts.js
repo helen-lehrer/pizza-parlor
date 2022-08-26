@@ -43,6 +43,12 @@ PizzaDatabase.prototype.addPizza = function (pizza) {
   this.pizzas[pizza.id] = pizza;
 }
 
+PizzaDatabase.prototype.findPizza = function (id) {
+  if (this.pizzas[pizza.id] !== undefined) {
+    return this.pizzas[pizza.id];
+  }
+  return false;
+};
 
 //UI Logic
 function handleFormSubmission (event) {
