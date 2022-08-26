@@ -58,12 +58,16 @@ PizzaDatabase.prototype.findPizza = function (id) {
 //UI Logic
 let pizzaDatabase = new PizzaDatabase();
 
+function resetForm () {
+  const form = document.getElementById("order-form");
+  form.reset();
+}
+
 function handleFormSubmission (event) {
   event.preventDefault();
   let size = document.getElementById("size-select").value;
   let toppingsSelections = document.querySelectorAll("input[name=toppings-checkbox]:checked");
   let toppingsSelectionsArray = Array.from(toppingsSelections);
-  console.log("toppingsSelectionsArray");
 
   let pizza = new Pizza (toppingsSelectionsArray, size);
   pizzaDatabase.addPizza(pizza);
@@ -76,9 +80,16 @@ function handleFormSubmission (event) {
   const ul = document.createElement("ul");
   const li = document.createElement("li");
   ul.append(li);
-  li.innerText = pizzaDatabase.pizzas[pizza.id].id + ": size: " + size + ", toppings: " + toppingsSelectionsArray.join(" ");
+
+  let displayToppingsArray = toppingsSelectionsArray.map(function(input) {
+    return input.value;
+  });
+
+  li.innerText = "Pizza " + pizzaDatabase.pizzas[pizza.id].id + ": size: " + size + " toppings: " + displayToppingsArray.join(", ");
+
   const orderedPizzaList = document.getElementById("ordered-pizza-list");
   orderedPizzaList.append(ul);
+  resetForm();
 
   /*
   const orderedPizzaList = document.getElementById("ordered-pizza-list");
