@@ -1,18 +1,34 @@
-img {
-  float: right;
-  margin: 5px;
-  padding: 5px;
-}
-
 #jumbotron {
   background-image: url(https://images.squarespace-cdn.com/content/v1/5aea35112714e54e9142b66c/1660689001532-ZNZWS7Z3U6A7MD8NT1A7/BOMBER_WEB_Square.png?format=1000w);
   background-size: cover;
 }
 
-.lead {
-  margin: 20px;
+#left-column {
+  background-color: rgb(220, 220, 220);
+}
+
+#size-label {
+  margin-top: 10px;
 }
 
 #toppings-label {
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#size-select {
+  margin-bottom: 10px;
+}
+
+#ordered-pizza-heading {
+  font-size: 24px;
+}
+
+#company-heading, #site-slogan {
+  margin-left: 10px;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

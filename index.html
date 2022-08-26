@@ -6,42 +6,54 @@
   <script src="js/scripts.js"></script>
   <title>Pizza Parlor</title>
 </head>
-<body class="container">
+<body>
   <div class="jumbotron jumbotron-fluid" id="jumbotron">
-    <h1 class="display-4">Pizza Parlor</h1>
-    <p class="lead">Order online today!</p>
+    <h1 class="display-4" id="company-heading">Pizza Parlor</h1>
+    <p class="lead" id="site-slogan">Order online today!</p>
   </div>
-  <div class="custom-control custom-checkbox">
-    <form id="order-form">
-      <label for="size-select">Size:</label><br>
-      <select name="size" id="size-select" class="custom-select custom-select-sm">
-        <option selected>--Please choose an option--</option>
-        <option value="small">Small: $10 base price</option>
-        <option value="medium">Medium: $13 base price</option>
-        <option value="large">Large: $16 base price</option>
-      </select><br>
-      <label id="toppings-label">Toppings($2/ea):</label><br>
-      <input type="checkbox" id="pepperoni" name="toppings-checkbox" value="pepperoni">
-      <label for="pepperoni">Pepperoni</label><br>
-      <input type="checkbox"id="black-olives" name="toppings-checkbox" value="black-olives">
-      <label for="black-olives">Black Olives</label><br>
-      <input type="checkbox"id="anchovies" name="toppings-checkbox" value="anchovies">
-      <label for="anchovies">Anchovies</label><br>
-      <input type="checkbox"id="crushed-garlic" name="toppings-checkbox" value="crushed-garlic">
-      <label for="crushed-garlic">Crushed Garlic</label><br>
-      <input type="checkbox"id="fresh-basil" name="toppings-checkbox" value="fresh-basil">
-      <label for="fresh-basil">Fresh Basil</label><br>
-      <input type="checkbox"id="meatballs" name="toppings-checkbox" value="meatballs">
-      <label for="meatballs">Meatballs</label><br>
-      <input type="checkbox"id="tempeh" name="toppings-checkbox" value="tempeh">
-      <label for="meatballs">Tempeh</label><br>
-      <input type="checkbox"id="roasted-peppers" name="toppings-checkbox" value="roasted-peppers">
-      <label for="roasted-peppers">Roasted Peppers</label><br>
-      <button type="submit">Calculate Price</button>
-    </form>
-  </div>
-  <div>
-    <p class="lead">Total Price: $<span id="price-display"></span> </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-6" id="left-column">
+        <div class="custom-control custom-checkbox">
+          <form id="order-form">
+            <label for="size-select" id="size-label">Size:</label><br>
+            <select name="size" id="size-select" class="custom-select custom-select-sm">
+              <option selected>--Please choose an option--</option>
+              <option value="small">Small: $10 base price</option>
+              <option value="medium">Medium: $13 base price</option>
+              <option value="large">Large: $16 base price</option>
+            </select><br>
+            <label id="toppings-label">Toppings<em> ($2/ea)</em>:</label><br>
+            <input type="checkbox" id="pepperoni" name="toppings-checkbox" value="pepperoni">
+            <label for="pepperoni">Pepperoni</label><br>
+            <input type="checkbox" id="black-olives" name="toppings-checkbox" value="black-olives">
+            <label for="black-olives">Black Olives</label><br>
+            <input type="checkbox" id="anchovies" name="toppings-checkbox" value="anchovies">
+            <label for="anchovies">Anchovies</label><br>
+            <input type="checkbox" id="crushed-garlic" name="toppings-checkbox" value="crushed-garlic">
+            <label for="crushed-garlic">Crushed Garlic</label><br>
+            <input type="checkbox" id="fresh-basil" name="toppings-checkbox" value="fresh-basil">
+            <label for="fresh-basil">Fresh Basil</label><br>
+            <input type="checkbox" id="meatballs" name="toppings-checkbox" value="meatballs">
+            <label for="meatballs">Meatballs</label><br>
+            <input type="checkbox" id="tempeh" name="toppings-checkbox" value="tempeh">
+            <label for="meatballs">Tempeh</label><br>
+            <input type="checkbox" id="roasted-peppers" name="toppings-checkbox" value="roasted-peppers">
+            <label for="roasted-peppers">Roasted Peppers</label><br>
+            <button type="submit" class="btn btn-outline-dark">Calculate Price</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <p class="lead" id="price-display-style">Total Price: $<span id="price-display"></span></p>
+        <div>
+          <p>
+            <h3 class="display-4" id="ordered-pizza-heading">List of Ordered Pizzas:</h3>
+            <span id="ordered-pizza-display"></span>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
