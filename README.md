@@ -11,8 +11,11 @@ Expected Output: Pizza { toppings: ["olives", "garlic"], size: "medium" }
 
 Describe: Pizza.prototype.calculatePrice()
 
-Test: "It should return a price based on the Pizza object properties"
-Code: pizzaOrder.calculatePrice()
-Expected Output: <a number equal to the expected price>
+Test: "It should return 3 different prices based on the Pizza object size property"
+Code: pizza.calculatePrice()
+Expected Output:
+if pizza.size = small, then expected output = 10
+if pizza.size = medium, then expected output = 13
+if pizza.size = medium, then expected output = 16
 
 -------------------------
