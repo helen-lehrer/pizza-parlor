@@ -66,9 +66,6 @@ function handleFormSubmission (event) {
   priceDisplay.innerText = price;
 }
 
-
-
-
 window.addEventListener("load", function () {
   const orderForm = document.getElementById("order-form");
   orderForm.addEventListener("submit", handleFormSubmission);
