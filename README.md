@@ -33,12 +33,12 @@ sizePrice + (2 * (pizza.toppings.length))
 
 -------------------------
 
-Describe: PizzaDatabase()
+Describe: PizzaDatabase(pizza)
 
-Test: "It should return a PizzaDatabase object with an empty pizzas property"
+Test: "It should return a PizzaDatabase object with a pizzas property with the value of pizza"
 
-Code: let pizzaDatabase = new PizzaDatabase()
+Code: let pizzaDatabase = new PizzaDatabase(pizza)
 
-Expected Output: PizzaDatabase { pizzas: }
+Expected Output: PizzaDatabase { pizzas: pizza}
 
 
