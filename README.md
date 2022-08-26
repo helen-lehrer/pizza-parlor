@@ -20,10 +20,11 @@ if pizza.size = medium, then expected output = 16
 
 -------------------------
 
-Describe: Pizza.prototype.calculateToppingsPrice()
+Describe: Pizza.prototype.calculateToppingsPrice(sizePrice)
 
 Test: "It should add onto the returned value of Pizza.prototype.calculateSizePrice() based on the amount of toppings selected and return a final price"
 
-Code: pizza.calculateToppingsPrice(pizza.calculateSizePrice())
+Code: pizza.calculateToppingsPrice(sizePrice)
+
 Expected Output:
-(pizza.calculateSizePrice()) + (2 * (pizza.toppings.length))
+sizePrice + (2 * (pizza.toppings.length))
