@@ -9,11 +9,11 @@ Expected Output: Pizza { toppings: ["olives", "garlic"], size: "medium" }
 
 -------------------------
 
-Describe: Pizza.prototype.calculateSizePrice()
+Describe: Pizza.prototype.calculateBasePrice()
 
 Test: "It should return 3 different prices based on the Pizza object size property"
 
-Code: pizza.calculateSizePrice();
+Code: pizza.calculateBasePrice();
 
 Expected Output:
 if pizza.size = small, then expected output = 10
@@ -22,11 +22,11 @@ if pizza.size = medium, then expected output = 16
 
 -------------------------
 
-Describe: Pizza.prototype.calculateToppingsPrice(sizePrice)
+Describe: Pizza.prototype.calculateFinalPrice(sizePrice)
 
 Test: "It should add onto the returned value of Pizza.prototype.calculateSizePrice() based on the amount of toppings selected and return a final price"
 
-Code: pizza.calculateToppingsPrice(sizePrice);
+Code: pizza.calculateFinalPrice(sizePrice);
 
 Expected Output:
 sizePrice + (2 * (pizza.toppings.length))

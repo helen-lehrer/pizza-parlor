@@ -5,7 +5,7 @@ function Pizza (toppings, size, id) {
   this.id = 0; 
 }
 
-Pizza.prototype.calculateSizePrice = function () {
+Pizza.prototype.calculateBasePrice = function () {
   let price;
   if (this.size === "small") {
     price = 10;
@@ -19,7 +19,7 @@ Pizza.prototype.calculateSizePrice = function () {
   return price;
 };
 
-Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
+Pizza.prototype.calculateFinalPrice = function (sizePrice) {
   let price;
   if (this.toppings.length === 0) {
     price = sizePrice;
@@ -61,8 +61,11 @@ function handleFormSubmission (event) {
 
   let pizza = new Pizza (toppingsSelectionsArray, size);
   pizzaDatabase.addPizza(pizza);
-
+  let price = pizza.calculateFinalPrice(pizza.calculateBasePrice());
+  const priceDisplay = document.getElementById("price-display");
+  priceDisplay.innerText = price;
 }
+
 
 
 
