@@ -28,4 +28,14 @@ Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
 };
 
 //UI Logic
-
+function handleFormSubmission (event) {
+  event.preventDefault();
+  let size = document.getElementById("size-select").value;
+  let toppings = document.getElementById("")
+  let pizza = new Pizza (toppings, size);
+  pizza.toppings =  
+}
+window.addEventListener("load", function () {
+  const orderForm = document.getElementById("order-form");
+  orderForm.addEventListener("submit", handleFormSubmission);
+})
