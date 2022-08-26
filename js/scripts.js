@@ -27,6 +27,8 @@ Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
   return price;
 };
 
+function PizzaDatabase (pizza)
+
 //UI Logic
 function handleFormSubmission (event) {
   event.preventDefault();
