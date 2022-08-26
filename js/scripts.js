@@ -85,16 +85,13 @@ function handleFormSubmission (event) {
     return input.value;
   });
 
-  li.innerText = "Pizza " + pizzaDatabase.pizzas[pizza.id].id + ": size: " + size + " toppings: " + displayToppingsArray.join(", ");
+  if (price !== " size not selected") {
+    li.innerText = "Pizza " + pizzaDatabase.pizzas[pizza.id].id + ": size: " + size + " toppings: " + displayToppingsArray.join(", ");
+    const orderedPizzaList = document.getElementById("ordered-pizza-list");
+    orderedPizzaList.append(ul);
+  }
 
-  const orderedPizzaList = document.getElementById("ordered-pizza-list");
-  orderedPizzaList.append(ul);
   resetForm();
-
-  /*
-  const orderedPizzaList = document.getElementById("ordered-pizza-list");
-  orderedPizzaList.append(ul);
-  */
 }
 
 window.addEventListener("load", function () {
