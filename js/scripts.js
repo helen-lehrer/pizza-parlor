@@ -51,12 +51,20 @@ PizzaDatabase.prototype.findPizza = function (id) {
 };
 
 //UI Logic
+let pizzaDatabase = new PizzaDatabase();
+
 function handleFormSubmission (event) {
   event.preventDefault();
   let size = document.getElementById("size-select").value;
-  let toppings = document.getElementById("")
-  let pizza = new Pizza (toppings, size);
+  let toppingsSelections = document.querySelectorAll("input[name=toppings-checkbox]:checked");
+  let toppingsSelectionsArray = Array.from(toppingsSelections);
+
+  let pizza = new Pizza (toppingsSelectionsArray, size);
+  pizzaDatabase.addPizza(pizza);
+
 }
+
+
 
 window.addEventListener("load", function () {
   const orderForm = document.getElementById("order-form");

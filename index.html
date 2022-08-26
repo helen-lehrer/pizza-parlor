@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Pizza Parlor</h1>
-  <form id-="order-form">
+  <form id="order-form">
     <label for="size-select">Size:</label><br>
     <select name="size" id="size-select">
       <option value="">--Please choose an option--</option>
@@ -15,22 +15,22 @@
       <option value="medium">Medium: $13 base price</option>
       <option value="large">Large: $16 base price</option>
     </select><br>
-    <label for="toppings-checkbox">Toppings($2/ea):</label><br>
-      <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni">
+    <label>Toppings($2/ea):</label><br>
+      <input type="checkbox" id="pepperoni" name="toppings-checkbox" value="pepperoni">
       <label for="pepperoni">Pepperoni</label><br>
-      <input type="checkbox" id="black-olives" name="black-olives" value="black-olives">
+      <input type="checkbox" id="black-olives" name="toppings-checkbox" value="black-olives">
       <label for="black-olives">Black Olives</label><br>
-      <input type="checkbox" id="anchovies" name="anchovies" value="anchovies">
+      <input type="checkbox" id="anchovies" name="toppings-checkbox" value="anchovies">
       <label for="anchovies">Anchovies</label><br>
-      <input type="checkbox" id="crushed-garlic" name="crushed-garlic" value="crushed-garlic">
+      <input type="checkbox" id="crushed-garlic" name="toppings-checkbox" value="crushed-garlic">
       <label for="crushed-garlic">Crushed Garlic</label><br>
-      <input type="checkbox" id="fresh-basil" name="fresh-basil" value="fresh-basil">
+      <input type="checkbox" id="fresh-basil" name="toppings-checkbox" value="fresh-basil">
       <label for="fresh-basil">Fresh Basil</label><br>
-      <input type="checkbox" id="meatballs" name="meatballs" value="meatballs">
+      <input type="checkbox" id="meatballs" name="toppings-checkbox" value="meatballs">
       <label for="meatballs">Meatballs</label><br>
-      <input type="checkbox" id="tempeh" name="tempeh" value="tempeh">
+      <input type="checkbox" id="tempeh" name="toppings-checkbox" value="tempeh">
       <label for="meatballs">Tempeh</label><br>
-      <input type="checkbox" id="roasted-peppers" name="roasted-peppers" value="roasted-peppers">
+      <input type="checkbox" id="roasted-peppers" name="toppings-checkbox" value="roasted-peppers">
       <label for="roasted-peppers">Roasted Peppers</label><br>
     <button type="submit">Calculate Price</button>
   </form>
