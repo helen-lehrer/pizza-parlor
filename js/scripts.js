@@ -1,7 +1,8 @@
 //Business Logic
-function Pizza (toppings, size) {
+function Pizza (toppings, size, id) {
   this.toppings = toppings;
   this.size = size;
+  this.id = id 
 }
 
 Pizza.prototype.calculateSizePrice = function () {
@@ -31,13 +32,18 @@ function PizzaDatabase () {
   this.pizzas = {};
 }
 
+PizzaDatabase.prototype.addPizza = function (pizza) {
+  this.pizzas[player.name] = player;
+}
+}
+
 //UI Logic
 function handleFormSubmission (event) {
   event.preventDefault();
   let size = document.getElementById("size-select").value;
   let toppings = document.getElementById("")
   let pizza = new Pizza (toppings, size);
-  pizza.toppings =  
+   
 }
 window.addEventListener("load", function () {
   const orderForm = document.getElementById("order-form");

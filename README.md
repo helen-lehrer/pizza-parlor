@@ -33,6 +33,17 @@ sizePrice + (2 * (pizza.toppings.length))
 
 -------------------------
 
+Describe: Pizza.prototype.addId()
+
+Test: "It should assign an ID of an ascending number value to the ID property of pizza"
+
+Code: pizza.addId()
+
+Expected Output:
+Pizza {id: 1}
+
+-------------------------
+
 Describe: PizzaDatabase()
 
 Test: "It should return a PizzaDatabase object with a pizzas property with the value of an empty object"
