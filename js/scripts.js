@@ -30,17 +30,19 @@ Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
 
 function PizzaDatabase () {
   this.pizzas = {};
+  this.currentId = 0;
 }
 
 PizzaDatabase.prototype.assignId = function () {
-  this.id += 1;
-  return this.id;
+  this.currentId += 1;
+  return this.currentId;
 }
 
 PizzaDatabase.prototype.addPizza = function (pizza) {
-  this.pizzas[player.name] = player;
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
 }
-}
+
 
 //UI Logic
 function handleFormSubmission (event) {
@@ -48,8 +50,8 @@ function handleFormSubmission (event) {
   let size = document.getElementById("size-select").value;
   let toppings = document.getElementById("")
   let pizza = new Pizza (toppings, size);
-   
 }
+
 window.addEventListener("load", function () {
   const orderForm = document.getElementById("order-form");
   orderForm.addEventListener("submit", handleFormSubmission);
