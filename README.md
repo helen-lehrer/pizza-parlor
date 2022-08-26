@@ -12,7 +12,9 @@ Expected Output: Pizza { toppings: ["olives", "garlic"], size: "medium" }
 Describe: Pizza.prototype.calculateSizePrice()
 
 Test: "It should return 3 different prices based on the Pizza object size property"
+
 Code: pizza.calculateSizePrice()
+
 Expected Output:
 if pizza.size = small, then expected output = 10
 if pizza.size = medium, then expected output = 13
@@ -28,3 +30,15 @@ Code: pizza.calculateToppingsPrice(sizePrice)
 
 Expected Output:
 sizePrice + (2 * (pizza.toppings.length))
+
+-------------------------
+
+Describe: PizzaDatabase(pizzas)
+
+Test: "It should return a PizzaDatabase object with a pizzas property that stores the pizza object instance"
+
+Code: let pizzaDatabase = new PizzaDatabase(pizza)
+
+Expected Output: PizzaDatabase { pizzas: pizza}
+
+
