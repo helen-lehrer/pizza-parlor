@@ -3,11 +3,16 @@ function Pizza (toppings, size) {
   this.size = size;
 }
 
-Pizza.prototype.calculatePrice() {
+Pizza.prototype.calculatePrice = function () {
   let price;
-  if (size === "small") {
+  if (this.size === "small") {
     price = 10;
-  } else if ( size === "medium") {
+  } else if (this.size === "medium") {
     price = 13;
-  } else if 
-}
+  } else if (this.size === "large") {
+    price = 16;
+  } else {
+    price = "size not selected";
+  }
+  return price;
+};
