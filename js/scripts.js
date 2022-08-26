@@ -14,7 +14,7 @@ Pizza.prototype.calculateBasePrice = function () {
   } else if (this.size === "large") {
     price = 16;
   } else {
-    price = "size not selected";
+    price = " size not selected";
   }
   return price;
 };
@@ -23,6 +23,9 @@ Pizza.prototype.calculateFinalPrice = function (basePrice) {
   let price;
   if (this.toppings.length === 0) {
     price = basePrice;
+    return price;
+  } else if (basePrice === " size not selected") {
+    return " size not selected";
   }
   price = basePrice + (2 * this.toppings.length);
   return price;
