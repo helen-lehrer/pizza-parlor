@@ -16,3 +16,12 @@ Pizza.prototype.calculateSizePrice = function () {
   }
   return price;
 };
+
+Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
+  let price;
+  if (this.toppings.length === 0) {
+    price = sizePrice;
+  }
+  price = sizePrice + (2 * this.toppings.length);
+  return price;
+};
