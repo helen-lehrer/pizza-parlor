@@ -2,7 +2,7 @@
 function Pizza (toppings, size, id) {
   this.toppings = toppings;
   this.size = size;
-  this.id = id 
+  this.id = 0; 
 }
 
 Pizza.prototype.calculateSizePrice = function () {
@@ -30,6 +30,11 @@ Pizza.prototype.calculateToppingsPrice = function (sizePrice) {
 
 function PizzaDatabase () {
   this.pizzas = {};
+}
+
+PizzaDatabase.prototype.assignId = function () {
+  this.id += 1;
+  return this.id;
 }
 
 PizzaDatabase.prototype.addPizza = function (pizza) {
