@@ -67,9 +67,9 @@ function handleFormSubmission () {
 
   const orderedPizzaDisplay = document.getElementById("ordered-pizza-display");
   orderedPizzaDisplay.removeAttribute("class", "hidden");
-  const ul = document.createElement("ul");
   const li = document.createElement("li");
-  ul.append(li);
+  const ol = document.getElementById("ol");
+  ol.append(li);
 
   let displayToppingsArray = toppingsSelectionsArray.map(function(input) {
     return input.value;
@@ -78,7 +78,7 @@ function handleFormSubmission () {
   if (price !== " size not selected") {
     li.innerText = "size: " + size + " toppings: " + displayToppingsArray.join(", ");
     const orderedPizzaList = document.getElementById("ordered-pizza-list");
-    orderedPizzaList.append(ul);
+    orderedPizzaList.append(ol);
   }
 
   resetForm();
