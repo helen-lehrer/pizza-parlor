@@ -1,5 +1,5 @@
 //Business Logic
-function Pizza (toppings, size, id) {
+function Pizza (toppings, size) {
   this.toppings = toppings;
   this.size = size;
   this.id = 0; 
@@ -19,7 +19,8 @@ Pizza.prototype.calculateBasePrice = function () {
   return price;
 };
 
-Pizza.prototype.calculateFinalPrice = function (basePrice) {
+Pizza.prototype.calculateFinalPrice = function () {
+  let basePrice = this.calculateBasePrice();
   let price;
   if (this.toppings.length === 0) {
     price = basePrice;
@@ -46,25 +47,14 @@ PizzaDatabase.prototype.addPizza = function (pizza) {
   this.pizzas[pizza.id] = pizza;
 }
 
-/*
-PizzaDatabase.prototype.findPizza = function (id) {
-  if (this.pizzas[pizza.id] !== undefined) {
-    return this.pizzas[pizza.id];
-  }
-  return false;
-};
-*/
-
 //UI Logic
-let pizzaDatabase = new PizzaDatabase();
-
 function resetForm () {
   const form = document.getElementById("order-form");
   form.reset();
 }
 
-function handleFormSubmission (event) {
-  event.preventDefault();
+function handleFormSubmission () {
+  let pizzaDatabase = new PizzaDatabase();
   let size = document.getElementById("size-select").value;
   let toppingsSelections = document.querySelectorAll("input[name=toppings-checkbox]:checked");
   let toppingsSelectionsArray = Array.from(toppingsSelections);
@@ -86,7 +76,7 @@ function handleFormSubmission (event) {
   });
 
   if (price !== " size not selected") {
-    li.innerText = "Pizza " + pizzaDatabase.pizzas[pizza.id].id + ": size: " + size + " toppings: " + displayToppingsArray.join(", ");
+    li.innerText = "size: " + size + " toppings: " + displayToppingsArray.join(", ");
     const orderedPizzaList = document.getElementById("ordered-pizza-list");
     orderedPizzaList.append(ul);
   }
@@ -94,7 +84,12 @@ function handleFormSubmission (event) {
   resetForm();
 }
 
+function submitEvent(event) {
+  event.preventDefault();
+  handleFormSubmission();
+}
+
 window.addEventListener("load", function () {
   const orderForm = document.getElementById("order-form");
-  orderForm.addEventListener("submit", handleFormSubmission);
+  orderForm.addEventListener("submit", submitEvent);
 })
