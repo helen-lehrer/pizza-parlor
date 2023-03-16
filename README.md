@@ -3,7 +3,7 @@
 **By: Helen Lehrer**  
 **Date Created: 8/26/2022**
 
-### [Link to Site](https://helen-lehrer.github.io/pizza-parlor/)
+### [Link to Site](https://pizzaparlor.netlify.app/)
 ---
 ### Technologies Used
 * HTML
